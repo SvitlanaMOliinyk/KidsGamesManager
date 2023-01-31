@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1.5rem;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.5;
+  background-color: seashell;
+  color: #2e2420;
+}
+p {
+  margin: 0.5rem 0;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #cb5834;
+}
+a:visited {
+  color: #d69469;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.navbar h1 {
+  margin-right: auto;
+  border-bottom: 3px solid #cb5834;
+}
+.navbar a {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 4px;
+  color: #2e2420;
+}
+.navbar a:hover {
+  color: #cb5834;
+}
+.navbar a.active {
+  background: #c0acac;
+  color: #f5f6f3;
+}
+
+/*components*/
+.help-app a {
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.help-app nav {
+  margin: 3rem 2rem;
+}
+
+/*  search-form */
+form {
+  margin-top: 1rem;
+}
+form input,
+form label span,
+.search-button {
+  display: block;
+}
+form input,
+form select,
+textarea {
+  margin-bottom: 1rem;
+  padding: 8px;
+  border-radius: 4px;
+  border: 0;
+  width: 300px;
+  color: #cb5834;
+}
+form label span {
+  margin-bottom: 0.5rem;
+}
+
+button {
+  width: 300px;
+  border: 0;
+  padding: 8px;
+  border-radius: 4px;
+  color: white;
+  background: #cb5834;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #d69469;
+}
+
+.add-game button {
+  display: flex;
+}
