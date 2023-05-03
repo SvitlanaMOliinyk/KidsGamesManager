@@ -1,10 +1,14 @@
-import { Outlet, Navigate } from "react-router-dom";
-import { useContext } from "react";
-import { SignContext } from "../context/SignContext";
+import { Outlet, Navigate, useLocation } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth.js";
 
 function ProtectedRoutes() {
-  const [sign] = useContext(SignContext);
-  return <>{sign ? <Outlet /> : <Navigate to="login" />}</>;
+  const { sign } = useAuth();
+  const location = useLocation();
+  return sign?.name ? (
+    <Outlet />
+  ) : (
+    <Navigate to="login" state={{ from: location }} replace />
+  );
 }
 
 export default ProtectedRoutes;

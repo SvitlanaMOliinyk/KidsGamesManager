@@ -14,8 +14,14 @@ export function FavoritesProvider({ children }) {
       setFavoriteIds([...favoriteIds, favoriteGameId]);
     }
   }
+  const value = {
+    favoriteIds,
+    setFavoriteIds,
+    handleFavorites,
+  };
+
   return (
-    <FavoritesContext.Provider value={[favoriteIds, handleFavorites]}>
+    <FavoritesContext.Provider value={value}>
       {children}
     </FavoritesContext.Provider>
   );

@@ -4,32 +4,43 @@ import useFetch from "../hooks/useFetch";
 import { FavoritesContext } from "../context/FavoritesContext";
 import { baseUrl } from "../constants";
 
-const Game = () => {
+export default function Game() {
   const { id } = useParams();
   const url = baseUrl + `/${id}`;
   const { data: game, isLoading, error } = useFetch(url);
-  const [favoriteIds, handleFavorites] = useContext(FavoritesContext);
+  const { handleFavorites } = useContext(FavoritesContext);
+  const {
+    _id,
+    name,
+    age,
+    image,
+    location,
+    kind,
+    rules,
+    minPlayers,
+    maxPlayers,
+  } = game;
 
   return (
-    <li className="game" key={game.id}>
+    <li className="game" key={_id}>
       <div className="rules">
-        <h3>{game.name}</h3>
-        <h5>{game.age}+</h5>
+        <h3>{name}</h3>
+        <div className="image-container">
+          <img src={image?.url} alt={name} className="image-game" width="300" />
+        </div>
+
+        <h5>{age}+</h5>
         <p>
-          Number of players: {game.minPlayers} - {game.maxPlayers}
+          Number of players: {minPlayers} - {maxPlayers}
         </p>
-        <p>{game.location}</p>
-        <p>{game.kind}+</p>
-        <p>{game.rules}</p>
+        <p>{location}</p>
+        <p>{kind}</p>
+        <p>{rules}</p>
       </div>
       {!isLoading ? (
         !error ? (
           <div className="buttonDiv">
-            <button
-              className="favorites"
-              id={game.id}
-              onClick={handleFavorites}
-            >
+            <button className="favorites" id={_id} onClick={handleFavorites}>
               Save in Favorites
             </button>
           </div>
@@ -41,6 +52,4 @@ const Game = () => {
       )}
     </li>
   );
-};
-
-export default Game;
+}

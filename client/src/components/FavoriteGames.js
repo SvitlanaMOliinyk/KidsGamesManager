@@ -3,7 +3,7 @@ import { FavoritesContext } from "../context/FavoritesContext";
 import { baseUrl } from "../constants";
 
 const FavoriteGames = () => {
-  const [favoriteIds, handleFavorites] = useContext(FavoritesContext);
+  const {favoriteIds, handleFavorites} = useContext(FavoritesContext);
   const urlArray = favoriteIds.map((favoriteId) => baseUrl + "/" + favoriteId);
   const [favorites, setFavorites] = useState([]);
   const [error, setError] = useState("");
@@ -18,7 +18,7 @@ const FavoriteGames = () => {
         for (let i = 0; i < urlArray.length; i++) {
           const response = await fetch(urlArray[i]);
           const result = await response.json();
-          results.push(result);
+          results.push(result.result);
         }
         setIsLoading(false);
       } catch (error) {
@@ -35,6 +35,7 @@ const FavoriteGames = () => {
     const unlike = favoriteGame.target.id;
     setFavorites(favorites.filter((favorite) => favorite.id !== unlike));
     handleFavorites(favoriteGame);
+    window.location.reload();
   }
 
   return (
@@ -55,7 +56,7 @@ const FavoriteGames = () => {
                 <p>{favorite.rules}</p>
                 <button
                   className="favorites"
-                  id={favorite.id}
+                  id={favorite._id}
                   onClick={handleRemove}
                 >
                   Remove from Favorites

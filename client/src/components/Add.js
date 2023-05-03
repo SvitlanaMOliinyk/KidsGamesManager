@@ -4,9 +4,9 @@ import { baseUrl } from "../constants";
 
 const Add = () => {
   const [name, setName] = useState("");
-  const [age, setAge] = useState(null);
-  const [minPlayers, setMinPlayers] = useState(null);
-  const [maxPlayers, setMaxPlayers] = useState(null);
+  const [age, setAge] = useState(0);
+  const [minPlayers, setMinPlayers] = useState(0);
+  const [maxPlayers, setMaxPlayers] = useState(0);
   const [location, setLocation] = useState("");
   const [kind, setKind] = useState("");
   const [rules, setRules] = useState("");

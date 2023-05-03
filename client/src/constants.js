@@ -1,1 +1,2 @@
-export const baseUrl = 'http://localhost:8080/games';
+export const baseUrl = '/games';
+export const baseUserUrl = '/users';
