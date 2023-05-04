@@ -2,17 +2,17 @@ import Result from "./Result";
 
 const Results = ({ data: games, error }) => {
   return (
-    <main>
+    <section className="content results">
       <ul>
         {games.length ? (
           games.map((game) => (
-            <Result key={game.id} game={game} error={error} />
+            <Result key={game._id} game={game} error={error} />
           ))
         ) : (
           <p>No Matching Games</p>
         )}
       </ul>
-    </main>
+    </section>
   );
 };
 export default Results;

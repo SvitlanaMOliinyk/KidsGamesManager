@@ -1,7 +1,20 @@
+import dotenv from "dotenv";
 import app from "./app.js";
+dotenv.config();
+import dbConnection from "./db/dbConnection.js";
+import { logInfo, logError } from "./util/logInfoAndError.js";
 
-const PORT = 8080;
+const port = process.env.PORT;
 
-app.listen(PORT, () =>
-  console.log(`Server is running on: http://localhost:${PORT}`)
-);
+const startServer = async () => {
+  try {
+    await dbConnection();
+    app.listen(port, () => {
+      logInfo(`Server started on port ${port}`);
+    });
+  } catch (error) {
+    logError(error);
+  }
+};
+
+startServer();

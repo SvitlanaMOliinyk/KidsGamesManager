@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 const Help = () => {
   return (
-    <div className="help-app">
+    <section className="content help-app">
       <h2>Help page</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dolor
@@ -28,7 +28,7 @@ const Help = () => {
         </NavLink>
       </nav>
       <Outlet />
-    </div>
+    </section>
   );
 };
 

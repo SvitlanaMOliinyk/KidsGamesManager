@@ -5,12 +5,12 @@
 }
 
 body {
-  margin: 0;
-  padding: 1.5rem;
   font-family: "Times New Roman", Times, serif;
   line-height: 1.5;
   background-color: seashell;
   color: #2e2420;
+  overflow-x: hidden;
+  
 }
 p {
   margin: 0.5rem 0;
@@ -26,28 +26,55 @@ a {
 a:visited {
   color: #d69469;
 }
+.App{
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  min-height: 100vh;
+  position: relative;
+  
+  
+}
+
+.content{
+padding: 2rem;
+margin-top: 16vh;
+margin-bottom: 21vh;
+}
 
 /* navbar */
+
+
 .navbar {
+  position: fixed;
+  z-index: 999;
+  background-color: seashell;
+  margin-top: 0;
+  padding-top: 2rem;
   display: flex;
-  gap: 16px;
-  justify-content: flex-end;
+  gap: 0.2rem;
+  justify-content: space-between;
   width: 100%;
-  margin: 0 auto;
-  margin-bottom: 2rem;
+  max-height: 15vh;
+  margin-bottom: 1rem;
+  
 }
 
-.navbar h1 {
-  margin-right: auto;
+.navbar h3 {
+  /* margin-right: auto; */
   border-bottom: 3px solid #cb5834;
-  font-size: clamp(1rem, 2.5vw, 2rem);
-  display: inline-block;
+  display: block;
+  padding-left: 2rem;
+  max-width: 30%;
+  font-size: clamp(1.2rem, 1.6rem, 2rem);
 }
+
 .navbar a {
   text-decoration: none;
   padding: 10px;
   border-radius: 4px;
   color: #2e2420;
+  font-size: clamp(1.2rem, 1.6rem, 2rem);
 }
 .navbar a:hover {
   color: #cb5834;
@@ -56,7 +83,9 @@ a:visited {
   background: #c0acac;
   color: #f5f6f3;
 }
-
+.navbar nav{
+  padding-right: 2rem;
+}
 /*components*/
 .help-app a {
   padding: 10px;
@@ -108,15 +137,104 @@ button:hover {
   display: flex;
 }
 
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.hide {
+  display: none;
+}
+
+.valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+}
+
+.invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.nameinfo{
+  font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: #000;
+    color: #fff;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -10px;
+}
+
+.nameinfo > svg {
+  margin-right: 0.25rem;
+}
+
+.errorMessage {
+  background-color: white;
+  color: red;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.image-container{
+  max-width: 50%; 
+}
+
+.game{
+  font-size: clamp(1.5rem, 2vw, 2.5rem); 
+  max-width: 80%;
+  margin: auto;
+  align-items: center;
+}
+.register-section{
+  display: flex;
+  max-width: 80%;
+  margin: auto;
+  align-items: center;
+  flex-direction: column;
+}
+.container-footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #cb5834;
+  height: 20vh;
+  padding: 1rem 2rem;
+  
+}
+
+@media screen and (max-width: 900px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .navbar a {
+    padding: 7px;
+  }
+  .navbar nav{
+   padding-left: 2rem;
+   padding-top: 1rem;
+  }
+.navbar h3{
+  max-width: 100%;
+}
+}
+
 @media screen and (max-width: 600px) {
   .navbar {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin: 0 auto;
-    margin-bottom: 2rem;
   }
   .navbar a {
     padding: 5px;
+  }
+  .navbar h3{
+    max-width: 100%;
   }
 }
