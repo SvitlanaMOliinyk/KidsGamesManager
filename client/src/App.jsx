@@ -7,6 +7,7 @@ import Game from "./components/Game";
 import Find from "./components/Find";
 import Help from "./components/Help";
 import Add from "./components/Add";
+import Footer from "./components/Footer";
 import Questions from "./components/Questions";
 import { FavoritesProvider } from "./context/FavoritesContext";
 import { SignProvider } from "./context/SignProvider";
@@ -29,9 +30,7 @@ function App() {
                 <Route path="find" element={<Find />} />
                 <Route path="favorite" element={<FavoriteGames />} />
 
-                <Route path="help" element={<Help />}>
-                  <Route path="questions" element={<Questions />} />
-                </Route>
+                
 
                 <Route path="add" element={<Add />} />
                 <Route path="games" element={<Games />} />
@@ -40,7 +39,12 @@ function App() {
 
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register />} />
+             
+               <Route path="help" element={<Help />}>
+                  <Route path="questions" element={<Questions />} />
+                </Route>
             </Routes>
+            <Footer />
           </BrowserRouter>
         </FavoritesProvider>
       </SignProvider>

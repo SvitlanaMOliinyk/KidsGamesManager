@@ -36,7 +36,7 @@ const Add = () => {
   };
 
   return (
-    <main>
+    <section className="content add">
       <h3>Add a new game</h3>
       <form className="add-game" onSubmit={handleSubmit}>
         <label>
@@ -114,7 +114,7 @@ const Add = () => {
         {!isPending && <button type="submit">Add</button>}
         {isPending && <button disabled>Adding the game...</button>}
       </form>
-    </main>
+    </section>
   );
 };
 

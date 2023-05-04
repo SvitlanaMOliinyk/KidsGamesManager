@@ -39,6 +39,7 @@ const FavoriteGames = () => {
   }
 
   return (
+    <section className="content favorite-games">
     <ul className="favorites">
       {!isLoading ? (
         favorites.length ? (
@@ -65,13 +66,14 @@ const FavoriteGames = () => {
             </li>
           ))
         ) : (
-          <p>Please, add your favorite games!</p>
+          <h3>Please, add your favorite games!</h3>
         )
       ) : (
         <p>Loading...</p>
       )}
       <h2>{error}</h2>
     </ul>
+    </section>
   );
 };
 

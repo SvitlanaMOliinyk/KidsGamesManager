@@ -7,6 +7,7 @@ import { baseUrl } from "../constants";
 const Games = () => {
   const { data: games, isLoading, error } = useFetch(baseUrl);
   return (
+    <section className="content games">
     <div className="games">
       <h2>List of Games</h2>
       <ul className="game-list">
@@ -24,6 +25,7 @@ const Games = () => {
         )}
       </ul>
     </div>
+    </section>
   );
 };
 

@@ -22,6 +22,7 @@ export default function Game() {
   } = game;
 
   return (
+    <section className="content section-game">
     <li className="game" key={_id}>
       <div className="rules">
         <h3>{name}</h3>
@@ -51,5 +52,6 @@ export default function Game() {
         <h3>Loading...</h3>
       )}
     </li>
+    </section>
   );
 }

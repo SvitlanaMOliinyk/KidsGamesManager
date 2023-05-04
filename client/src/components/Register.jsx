@@ -30,7 +30,6 @@ const Register = () => {
   const [matchPasswordFocus, setMatchPasswordFocus] = useState(false);
 
   const [errorMessage, setErrorMessage] = useState("");
-  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     userRef.current.focus();
@@ -38,15 +37,11 @@ const Register = () => {
 
   useEffect(() => {
     const userResult = USER_REGEX.test(userName);
-    console.log("userResult:", userResult);
-    console.log("userName:", userName);
     setValidUserName(userResult);
   }, [userName]);
 
   useEffect(() => {
     const passwordResult = PWD_REGEX.test(password);
-    console.log("passwordResult:", passwordResult);
-    console.log("password:", password);
     setValidPassword(passwordResult);
     const matchResult = password === matchPassword;
     setValidMatchPassword(matchResult);
@@ -75,11 +70,11 @@ const Register = () => {
       setUserName("");
       setPassword("");
       setMatchPassword("");
-      navigate("/login");
+      // navigate("/login");
     } catch (err) {
       if (!err?.response) {
         setErrorMessage("No Server Response");
-      } else if (err.response?.status === 409) {
+      } else if (err.response?.status === 400) {
         setErrorMessage("This name already exists");
       } else {
         setErrorMessage("Registration Failed");
@@ -89,7 +84,7 @@ const Register = () => {
   };
 
   return (
-    <section>
+    <section className="register-section">
       <p
         ref={errorRef}
         className={errorMessage ? "errorMessage" : "offscreen"}

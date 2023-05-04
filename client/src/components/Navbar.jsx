@@ -11,12 +11,12 @@ const Navbar = () => {
   };
   return (
     <header className="navbar">
-      <h2>KIDS' GAMES MANAGER</h2>
+      <h3>KIDS' GAMES MANAGER</h3>
       <nav>
         <NavLink to="/">Home</NavLink>
         <NavLink to="about">About</NavLink>
         <NavLink to="add">Add</NavLink>
-        <NavLink to="help">Help</NavLink>
+        
         <NavLink to="find">Find</NavLink>
         <NavLink to="favorite">Favorites</NavLink>
 

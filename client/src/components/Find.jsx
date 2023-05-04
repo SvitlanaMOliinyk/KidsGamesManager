@@ -54,7 +54,7 @@ export default function Find() {
     }
   };
   return (
-    <div className="find-form">
+    <section className="content find-form">
       <h3>Search for a game</h3>
       {isSubmitted === false ? (
         <form className="search-form" onSubmit={handleSubmit}>
@@ -156,6 +156,6 @@ export default function Find() {
       ) : (
         <p>Loading...</p>
       )}
-    </div>
+    </section>
   );
 }

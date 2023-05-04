@@ -16,6 +16,7 @@ const Result = ({ game, error }) => {
   } = game;
 
   return (
+    <section className="content result">
     <li className="game" key={_id}>
       {Object.keys(game).length ? (
         <div className="rules">
@@ -38,6 +39,7 @@ const Result = ({ game, error }) => {
         error
       )}
     </li>
+    </section>
   );
 };
 

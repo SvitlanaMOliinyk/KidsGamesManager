@@ -56,7 +56,7 @@ const Login = () => {
 //  
  /* <button onClick={handleLogout}>Log out</button> */
   return (    
-        <section className="login">
+        <section className="content login">
           <p
             ref={errorRef}
             className={errorMessage ? "errorMassage" : "offscreen"}

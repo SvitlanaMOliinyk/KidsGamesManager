@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <div className="home">
+    <section className="content home">
       <h2>Welcome</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dolor
@@ -21,7 +21,7 @@ const Home = () => {
         non odit saepe facere voluptas esse mollitia illo fuga exercitationem id
         dicta iusto eaque numquam quaerat ad! Fugit velit beatae laudantium.
       </p>
-    </div>
+    </section>
   );
 };
 

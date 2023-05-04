@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className="about">
+    <section className="content about">
       <h2>About Us</h2>
       <p>
         GOT FROM Wiki for learning purposes. Traditional children's games are
@@ -39,7 +39,7 @@ const About = () => {
         efficitur nisi vitae massa dapibus gravida.{" "}
       </p>
       <p>Duis porta elit risus, ut laoreet nibh aliquam nec.</p>
-    </div>
+    </section>
   );
 };
 
