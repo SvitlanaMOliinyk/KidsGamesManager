@@ -1,27 +1,46 @@
-import { useState } from "react";
-import { useNavigate, NavLink } from "react-router-dom";
-import { baseUrl } from "../constants";
-import Help from "./Help";
+import { NavLink } from "react-router-dom";
+import {
+  faCopyright,
+  faEnvelope,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = () => {
   return (
     <footer className="container-footer">
       <div className="app-name">
         <h3>KIDS' GAMES MANAGER</h3>
+        <div className="copyright-section">
+          <p>
+            <FontAwesomeIcon icon={faCopyright} /> 2023 Kids' Games Manager
+          </p>
+        </div>
       </div>
 
       <div className="info-section">
-      <NavLink to="help">Help</NavLink>
+        <ul className="useful-links">
+          <span style={{ fontWeight: "bold", fontSize: "larger" }}>
+            <li>
+              <NavLink to="about">About</NavLink>
+            </li>
+            <li>
+              <NavLink to="help">Help</NavLink>
+            </li>
+          </span>
+        </ul>
+      </div>
 
-        <div className="follow">
-          <h4>Follow Us</h4>
-          <ul className="social-media-links">
-            <li></li>
-          </ul>
-        </div>
-        <div className="copyright-section">
-          Copyright 2023 - All rights reserved.
-        </div>
+      <div className="follow">
+        <h4>Contact us</h4>
+        <ul className="social-media-links">
+          <li>
+            <FontAwesomeIcon icon={faEnvelope} /> kidgamemanager@info.com
+          </li>
+          <li>
+            <FontAwesomeIcon icon={faPhone} /> +31 555 00 555 0
+          </li>
+        </ul>
       </div>
     </footer>
   );

@@ -37,9 +37,11 @@ a:visited {
 }
 
 .content{
-padding: 2rem;
-margin-top: 16vh;
-margin-bottom: 21vh;
+padding: 1rem 2rem;
+margin-top: 15vh;
+margin-bottom: 16vh;
+align-self: center;
+overflow-wrap: break-word;
 }
 
 /* navbar */
@@ -50,7 +52,7 @@ margin-bottom: 21vh;
   z-index: 999;
   background-color: seashell;
   margin-top: 0;
-  padding-top: 2rem;
+  padding: 2rem 0;
   display: flex;
   gap: 0.2rem;
   justify-content: space-between;
@@ -179,15 +181,45 @@ button:hover {
   margin-top: 1rem;
 }
 
+.rules{
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: auto;
+}
+
 .image-container{
-  max-width: 50%; 
+  max-width: 90%;
+  background-color: white;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
+  border: 1px solid #cb5834;
+}
+
+img{
+  width: 100%;
+}
+
+.game-name{
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
+table{
+  background-color: white;
+  padding: 2rem;
+  max-width: 90%;
+  border: 1px solid #cb5834;
+}
+.game-rules{
+  max-width: 90%;
+  border: 1px solid #cb5834;
+  padding: 1rem;
 }
 
 .game{
   font-size: clamp(1.5rem, 2vw, 2.5rem); 
-  max-width: 80%;
+  max-width: 90%;
   margin: auto;
-  align-items: center;
 }
 .register-section{
   display: flex;
@@ -199,9 +231,13 @@ button:hover {
 .container-footer{
   position: fixed;
   bottom: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
   background-color: #cb5834;
-  height: 20vh;
+  height: 15vh;
   padding: 1rem 2rem;
   
 }
