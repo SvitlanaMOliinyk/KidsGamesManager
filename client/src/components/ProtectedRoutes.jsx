@@ -1,8 +1,11 @@
 import { Outlet, Navigate, useLocation } from "react-router-dom";
-import { useAuth } from "../hooks/useAuth.js";
+import { useContext } from "react";
+import { SignContext } from "../context/SignProvider";
 
 function ProtectedRoutes() {
-  const { sign } = useAuth();
+  const { sign } = useContext(SignContext);
+  console.log("sign from Protected routs:", sign);
+
   const location = useLocation();
   return sign?.name ? (
     <Outlet />

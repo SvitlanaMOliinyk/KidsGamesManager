@@ -6,6 +6,7 @@ const Navbar = () => {
   const { sign, setSign } = useContext(SignContext);
   const navigate = useNavigate();
   const handleLogout = () => {
+    console.log("handleLogout")
     setSign({});
     navigate("/register");
   };

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { baseUrl } from "../constants";
+import { SignContext } from "../context/SignProvider";
 
 const Add = () => {
   const [name, setName] = useState("");
@@ -12,9 +13,11 @@ const Add = () => {
   const [rules, setRules] = useState("");
   const [isPending, setIsPending] = useState(false);
   const navigate = useNavigate();
+  const { isLoggedIn } = useContext(SignContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (isLoggedIn === true) {
     const newGame = {
       name,
       age,
@@ -33,7 +36,11 @@ const Add = () => {
     }).then((response) => console.log("New game is added:", response));
     setIsPending(false);
     navigate("/about");
-  };
+  }
+  else{
+    navigate("/login");
+  }
+};
 
   return (
     <section className="content add">
