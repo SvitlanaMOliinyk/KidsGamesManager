@@ -10,7 +10,6 @@ body {
   background-color: seashell;
   color: #2e2420;
   overflow-x: hidden;
-  
 }
 p {
   margin: 0.5rem 0;
@@ -26,26 +25,23 @@ a {
 a:visited {
   color: #d69469;
 }
-.App{
+.App {
   display: flex;
   flex-direction: column;
   min-width: 100%;
   min-height: 100vh;
   position: relative;
-  
-  
 }
 
-.content{
-padding: 1rem 2rem;
-margin-top: 15vh;
-margin-bottom: 16vh;
-align-self: center;
-overflow-wrap: break-word;
+.content {
+  padding: 1rem 2rem;
+  margin-top: 15vh;
+  margin-bottom: 16vh;
+  align-self: center;
+  overflow-wrap: break-word;
 }
 
 /* navbar */
-
 
 .navbar {
   position: fixed;
@@ -59,7 +55,6 @@ overflow-wrap: break-word;
   width: 100%;
   max-height: 15vh;
   margin-bottom: 1rem;
-  
 }
 
 .navbar h3 {
@@ -85,7 +80,7 @@ overflow-wrap: break-word;
   background: #c0acac;
   color: #f5f6f3;
 }
-.navbar nav{
+.navbar nav {
   padding-right: 2rem;
 }
 /*components*/
@@ -96,6 +91,55 @@ overflow-wrap: break-word;
 
 .help-app nav {
   margin: 3rem 2rem;
+}
+
+/* home page */
+.home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  font-size: clamp(1.2rem, 1.6rem, 2rem);
+}
+.welcome {
+}
+.playing,
+.card-part,
+.white {
+  width: 80%;
+  margin: auto;
+}
+.img-playing-container,
+.photos {
+  background-color: white;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+.white {
+  background-color: white;
+  padding: 2rem;
+  border: 2px solid black;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
+}
+.all-games {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+  max-width: 100%;
+  margin: auto -4rem;
+  background-image: linear-gradient(
+      rgba(245, 78, 245, 0.8),
+      rgba(247, 215, 127, 0.8)
+    ),
+    url("./components/assets/alphabet.jpeg");
+  border: 2px solid black;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.overlay {
+  font-weight: bold;
+  text-align: right;
+  font-size: clamp(1rem, 1.4rem, 1.8rem);
 }
 
 /*  search-form */
@@ -158,14 +202,14 @@ button:hover {
   margin-left: 0.25rem;
 }
 
-.nameinfo{
+.nameinfo {
   font-size: 0.75rem;
-    border-radius: 0.5rem;
-    background: #000;
-    color: #fff;
-    padding: 0.25rem;
-    position: relative;
-    bottom: -10px;
+  border-radius: 0.5rem;
+  background: #000;
+  color: #fff;
+  padding: 0.25rem;
+  position: relative;
+  bottom: -10px;
 }
 
 .nameinfo > svg {
@@ -181,7 +225,7 @@ button:hover {
   margin-top: 1rem;
 }
 
-.rules{
+.rules {
   max-width: 80%;
   display: flex;
   flex-direction: column;
@@ -189,46 +233,68 @@ button:hover {
   margin: auto;
 }
 
-.image-container{
+.image-container {
   max-width: 90%;
   background-color: white;
   box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
   border: 1px solid #cb5834;
 }
 
-img{
+img {
   width: 100%;
 }
 
-.game-name{
+.game-name {
   text-align: center;
   padding: 0.5rem 1rem;
 }
-table{
+table {
   background-color: white;
   padding: 2rem;
   max-width: 90%;
   border: 1px solid #cb5834;
 }
-.game-rules{
+.game-rules {
   max-width: 90%;
   border: 1px solid #cb5834;
   padding: 1rem;
 }
 
-.game{
-  font-size: clamp(1.5rem, 2vw, 2.5rem); 
+.game {
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
   max-width: 90%;
   margin: auto;
 }
-.register-section{
+.games-cards {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.games-cards h2 {
+  align-self: center;
+  padding-bottom: 1rem;
+}
+
+.game-list {
+  max-width: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.game-card {
+  max-width: 15rem;
+}
+
+.register-section {
   display: flex;
   max-width: 80%;
   margin: auto;
   align-items: center;
   flex-direction: column;
 }
-.container-footer{
+.container-footer {
   position: fixed;
   bottom: 0;
   display: flex;
@@ -239,7 +305,6 @@ table{
   background-color: #cb5834;
   height: 15vh;
   padding: 1rem 2rem;
-  
 }
 
 @media screen and (max-width: 900px) {
@@ -252,13 +317,19 @@ table{
   .navbar a {
     padding: 7px;
   }
-  .navbar nav{
-   padding-left: 2rem;
-   padding-top: 1rem;
+  .navbar nav {
+    padding-left: 2rem;
+    padding-top: 1rem;
   }
-.navbar h3{
-  max-width: 100%;
-}
+  .navbar h3 {
+    max-width: 100%;
+  }
+  .white {
+    padding: 1rem;
+  }
+  .all-games {
+    min-width: 90%;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -270,7 +341,26 @@ table{
   .navbar a {
     padding: 5px;
   }
-  .navbar h3{
+  .navbar h3 {
     max-width: 100%;
+  }
+  .home {
+    grid-template-columns: 1fr;
+  }
+  .all-games {
+    min-width: 100%;
+    align-items: center;
+    margin: auto;
+  }
+  .overlay {
+    max-width: 100%;
+  }
+  .playing,
+  .card-part,
+  .white {
+    width: 90%;
+  }
+  .white {
+    padding: 2rem;
   }
 }
