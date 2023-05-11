@@ -1,3 +1,6 @@
 # KidsGamesManager
-The application gives the possibility to get and add games for children of different ages. Also, the application provides a search of games according to age, place to play (indoor/outdoor), number of players, and kind of game. 
-The main idea of this app is to help teachers or parents to choose suitable games for leisure time with children.
+
+![KidsGamesManager](client/src/components/assets/demo.gif)
+The Kids' Game Manager application offers access to a wide range of games suitable for children of various ages. Built using the MERN stack, it boasts a responsive design for optimal user experience.
+The application includes a search feature that enables registered users to discover games based on specific criteria such as age group, preferred play location (indoor/outdoor), number of players, and game type. Registered users also have the ability to add games to the database and create lists of their favorite games.
+The primary objective of this app is to assist teachers and parents in selecting appropriate games for enjoyable and educational leisure time with children.

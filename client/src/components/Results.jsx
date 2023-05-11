@@ -2,7 +2,7 @@ import Result from "./Result";
 
 const Results = ({ data: games, error }) => {
   return (
-    <section className="content results">
+    <section className="results">
       <ul>
         {games.length ? (
           games.map((game) => (

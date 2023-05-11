@@ -6,6 +6,7 @@ const Navbar = () => {
   const { sign, setSign } = useContext(SignContext);
   const navigate = useNavigate();
   const handleLogout = () => {
+    console.log("handleLogout")
     setSign({});
     navigate("/register");
   };
@@ -15,12 +16,15 @@ const Navbar = () => {
       <nav>
         <NavLink to="/">Home</NavLink>
         <NavLink to="about">About</NavLink>
-        <NavLink to="add">Add</NavLink>
+        
         
         <NavLink to="find">Find</NavLink>
-        <NavLink to="favorite">Favorites</NavLink>
+       
 
         {sign?.name ? (
+          <>
+          <NavLink to="add">Add</NavLink>
+           <NavLink to="favorite">Favorites</NavLink>
           <NavLink
             onClick={handleLogout}
             to="/"
@@ -31,7 +35,7 @@ const Navbar = () => {
           >
             Log out
           </NavLink>
-        ) : (
+          </>) : (
           <>
             <NavLink to="register">Register</NavLink>
             <NavLink
