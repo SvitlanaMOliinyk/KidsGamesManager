@@ -1,6 +1,7 @@
 import { games } from "../data/gamesData.js";
 import Game from "../models/Game.js";
 import { logError, logInfo } from "../util/logInfoAndError.js";
+import uploadImage from "../util/uploadImage.js";
 
 export const createGameCollection = async () => {
   await Game.deleteMany({});
@@ -13,7 +14,8 @@ export const createGameCollection = async () => {
 };
 
 export const createGame = async (req, res) => {
-  const game = req.body;
+  const game = req.body.game;
+  const gameImage = req.body.gameImage;
   try {
     if (typeof game !== "object") {
       res.status(400).json({
@@ -30,9 +32,16 @@ export const createGame = async (req, res) => {
       game.maxPlayers &&
       game.location &&
       game.kind &&
-      game.rules
+      game.rules &&
+      gameImage
     ) {
-      const newGame = await Game.create(game);
+      //image -> Cloudinery
+      const gameImageToUpload = await uploadImage(gameImage);
+      const public_id = gameImageToUpload.public_id;
+      const url = gameImageToUpload.url;
+      const fullGame = { ...game, public_id, url };
+      //game -> DB
+      const newGame = await Game.create(fullGame);
       logInfo("New game is created");
       res.status(201).json({ success: true, result: newGame });
     }

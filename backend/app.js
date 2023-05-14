@@ -6,8 +6,8 @@ import userRouter from "./routes/usersRouts.js";
 
 
 const app = express();
-app.use(bodyParser.json({ limit: "5mb" }));
-app.use(bodyParser.urlencoded({ limit: "5mb", extended: true }));
+app.use(bodyParser.json({ limit: "25mb" }));
+app.use(bodyParser.urlencoded({ limit: "25mb", extended: true }));
 app.use(express.json());
 app.use(cors());
 
