@@ -2,10 +2,8 @@ import mongoose from "mongoose";
 const { SchemaTypes } = mongoose;
 const gameSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  image: {
-    public_id: { type: String},
-    url: { type: String},
-  },
+  public_id: { type: String },
+  url: { type: String },
   age: { type: Number, required: true },
   minPlayers: { type: Number, required: true },
   maxPlayers: { type: Number, required: true },

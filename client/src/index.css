@@ -188,6 +188,18 @@ button:hover {
   display: flex;
 }
 
+.add {
+  display: flex;
+  justify-content: space-between;
+}
+.fileInput {
+  display: flex;
+  flex-direction: column;
+}
+.upload:hover {
+  color: #cb5834;
+}
+
 .offscreen {
   position: absolute;
   left: -9999px;

@@ -11,8 +11,6 @@ const gamesRouter = express.Router();
 
 gamesRouter.get("/", getGames);
 
-// router.get("/createCollection", createGameCollection);
-
 gamesRouter.post("/", createGame);
 
 gamesRouter.get("/find", getGameName);

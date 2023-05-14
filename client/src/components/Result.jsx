@@ -3,17 +3,8 @@ import { FavoritesContext } from "../context/FavoritesContext";
 
 const Result = ({ game, error }) => {
   const { handleFavorites } = useContext(FavoritesContext);
-  const {
-    _id,
-    name,
-    age,
-    image,
-    location,
-    kind,
-    rules,
-    minPlayers,
-    maxPlayers,
-  } = game;
+  const { _id, name, age, url, location, kind, rules, minPlayers, maxPlayers } =
+    game;
 
   return (
     <section className="result">
@@ -21,12 +12,7 @@ const Result = ({ game, error }) => {
         {Object.keys(game).length ? (
           <div className="rules">
             <div className="image-container">
-              <img
-                src={image?.url}
-                alt={name}
-                className="image-game"
-                width="300"
-              />
+              <img src={url} alt={name} className="image-game" width="300" />
               <div className="game-name">
                 <h3>{name}</h3>
               </div>
