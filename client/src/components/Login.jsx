@@ -2,9 +2,11 @@ import { useState, useRef, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { baseUserUrl } from "../constants";
 import { SignContext } from "../context/SignProvider";
+import { FavoritesContext } from "../context/FavoritesContext";
 
 const Login = () => {
   const { setSign, setIsLoggedIn } = useContext(SignContext);
+  const { setFavoriteIds } = useContext(FavoritesContext);
   const userRef = useRef();
   const errorRef = useRef();
   const navigate = useNavigate();
@@ -16,8 +18,6 @@ const Login = () => {
   useEffect(() => {
     userRef.current.focus();
   }, []);
-  
-  
 
   useEffect(() => {
     setErrorMessage("");
@@ -32,18 +32,16 @@ const Login = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user: { userName, password } }),
       }).then((response) => response.json());
-      console.log("User is logged in:", response.user);
-      console.log("Response.user.userName:", response.user.userName);
       const name = response.user.userName;
       const psw = response.user.password;
       const _id = response.user._id;
-      console.log("Response.user.userName:", name);
-      console.log("Response.user.password:", password);
-      console.log("Response.user._id:", _id);
-      setSign({ name, psw, _id });
+      const userFavoritesIds = response.user.favoriteGames;
+      setSign({ name, psw, _id, userFavoritesIds });
       setIsLoggedIn(true);
       setUserName("");
       setPassword("");
+      setFavoriteIds(userFavoritesIds);
+      localStorage.setItem("favoriteIds", JSON.stringify(userFavoritesIds));
       navigate("/");
     } catch (err) {
       if (!err?.response) {

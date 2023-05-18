@@ -4,6 +4,7 @@ export const FavoritesContext = createContext();
 export function FavoritesProvider({ children }) {
   const [favoriteIds, setFavoriteIds] = useState(() => {
     const favoriteIds = localStorage.getItem("favoriteIds");
+    console.log("localStorage.getItem in FavoriteContext:", favoriteIds)
     const parsedFavoriteIds = JSON.parse(favoriteIds);
     return parsedFavoriteIds || [];
   });

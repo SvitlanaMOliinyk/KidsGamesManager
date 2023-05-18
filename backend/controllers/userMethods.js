@@ -70,9 +70,10 @@ export const updateUserFavorites = async (req, res) => {
   try {
     const newFavoriteGames = await User.findOneAndUpdate(
       { _id: _id },
-      { $addToSet: { favoriteGames: favoriteIds } },
+      { $set: { favoriteGames: favoriteIds } },
       { new: true }
     );
+
     res.status(200).json({ success: true, favoriteGames: newFavoriteGames });
   } catch (error) {
     logError(error);
