@@ -4,7 +4,6 @@ import { SignContext } from "../context/SignProvider";
 
 function ProtectedRoutes() {
   const { sign } = useContext(SignContext);
-  console.log("sign from Protected routs:", sign);
 
   const location = useLocation();
   return sign?.name ? (

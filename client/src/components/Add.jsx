@@ -97,55 +97,86 @@ const Add = () => {
           </label>
           <label>
             <span>Add the Age of players</span>
-            <input
+            <select
               id="new-age"
-              type="text"
               required
               value={age}
               onChange={(e) => setAge(e.target.value)}
-            />
+            >
+              <option value="no-value"></option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+              <option value="5">5+</option>
+              <option value="6">6+</option>
+              <option value="9">9+</option>
+              <option value="10">10+</option>
+            </select>
           </label>
           <label>
             <span>Add the Minimum Number of Players</span>
-            <input
+            <select
               id="new-min"
-              type="text"
               required
               value={minPlayers}
               onChange={(e) => setMinPlayers(e.target.value)}
-            />
+            >
+              <option value="no-value"></option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+            </select>
           </label>
           <label>
             <span>Add the Maximum Number of Players</span>
-            <input
+            <select
               id="new-game"
-              type="text"
               required
               value={maxPlayers}
               onChange={(e) => setMaxPlayers(e.target.value)}
-            />
+            >
+              <option value="no-value"></option>
+              <option value="2">2</option>
+              <option value="4">4</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+              <option value="12">12</option>
+            </select>
           </label>
           <label>
             <span>Describe the Place: Indoor or Outdoor</span>
-            <input
+            <select
               id="new-max"
-              type="text"
               required
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-            />
+            >
+              <option value="no-value"></option>
+              <option value="indoor">Indoor</option>
+              <option value="outdoor">Outdoor</option>
+            </select>
           </label>
           <label>
             <span>
               Enter the Kind of the Game(for ex. <er>Tag Game</er>)
             </span>
-            <input
+            <select
               id="new-kind"
-              type="text"
               required
               value={kind}
               onChange={(e) => setKind(e.target.value)}
-            />
+            >
+              <option value="no-value"></option>
+              <option value="hand games">Hand games</option>
+              <option value="tag game">Tag Games</option>
+              <option value="card game">Card Games</option>
+              <option value="hiding games">Hiding Games</option>
+              <option value="active games">Active Games</option>
+              <option value="jumping games">Jumping games</option>
+              <option value="memory games">Memory games</option>
+            </select>
           </label>
           <label>
             <span>Describe the rules</span>

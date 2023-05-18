@@ -1,8 +1,5 @@
-import { useContext } from "react";
-import { FavoritesContext } from "../context/FavoritesContext";
 
 export default function GameCard({ game }) {
-  const { handleFavorites } = useContext(FavoritesContext);
   const { name, url } = game;
 
   return (

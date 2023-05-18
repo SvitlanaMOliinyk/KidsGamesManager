@@ -146,6 +146,7 @@ export default function Find() {
                 <option value="hiding games">Hiding Games</option>
                 <option value="active games">Active Games</option>
                 <option value="jumping games">Jumping games</option>
+                <option value="jumping games">Memory games</option>
               </select>
             </label>
             <button className="search-button" type="submit">

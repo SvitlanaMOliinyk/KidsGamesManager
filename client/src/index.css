@@ -257,6 +257,14 @@ button:hover {
   border: 1px solid #cb5834;
 }
 
+.favorites {
+  display: flex;
+  justify-content: space-around;
+}
+.favoritesContainer {
+  max-width: 50%;
+}
+
 img {
   width: 100%;
 }
