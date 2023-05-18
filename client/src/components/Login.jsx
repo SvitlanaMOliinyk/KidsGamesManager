@@ -36,9 +36,11 @@ const Login = () => {
       console.log("Response.user.userName:", response.user.userName);
       const name = response.user.userName;
       const psw = response.user.password;
+      const _id = response.user._id;
       console.log("Response.user.userName:", name);
       console.log("Response.user.password:", password);
-      setSign({ name, psw });
+      console.log("Response.user._id:", _id);
+      setSign({ name, psw, _id });
       setIsLoggedIn(true);
       setUserName("");
       setPassword("");

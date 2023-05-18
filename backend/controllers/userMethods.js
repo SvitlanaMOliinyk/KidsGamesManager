@@ -63,3 +63,22 @@ export const loginUser = async (req, res) => {
       .json({ success: false, msg: "Unable to login user, try again later" });
   }
 };
+
+export const updateUserFavorites = async (req, res) => {
+  const favoriteIds = req.body.favoriteGames;
+  const _id = req.body.id;
+  try {
+    const newFavoriteGames = await User.findOneAndUpdate(
+      { _id: _id },
+      { $addToSet: { favoriteGames: favoriteIds } },
+      { new: true }
+    );
+    res.status(200).json({ success: true, favoriteGames: newFavoriteGames });
+  } catch (error) {
+    logError(error);
+    res.status(500).json({
+      success: false,
+      msg: "Unable to update favorites, try again later",
+    });
+  }
+};

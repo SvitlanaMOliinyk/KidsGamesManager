@@ -1,8 +1,18 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const FavoritesContext = createContext();
 export function FavoritesProvider({ children }) {
-  const [favoriteIds, setFavoriteIds] = useState([]);
+  const [favoriteIds, setFavoriteIds] = useState(() => {
+    const favoriteIds = localStorage.getItem("favoriteIds");
+    const parsedFavoriteIds = JSON.parse(favoriteIds);
+    return parsedFavoriteIds || [];
+  });
+
+  useEffect(() => {
+    if (favoriteIds !== null) {
+      localStorage.setItem("favoriteIds", JSON.stringify(favoriteIds));
+    }
+  }, [favoriteIds]);
 
   function handleFavorites(favoriteGame) {
     const favoriteGameId = favoriteGame.target.id;
@@ -14,6 +24,7 @@ export function FavoritesProvider({ children }) {
       setFavoriteIds([...favoriteIds, favoriteGameId]);
     }
   }
+
   const value = {
     favoriteIds,
     setFavoriteIds,
