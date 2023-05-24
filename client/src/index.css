@@ -4,11 +4,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-color: seashell;
+  --active-navlink-color: #cb5834;
+  --font-color: #2e2420;
+  --visited-color: #d69469;
+}
+
 body {
   font-family: "Times New Roman", Times, serif;
   line-height: 1.5;
-  background-color: seashell;
-  color: #2e2420;
+  background-color: var(--bg-color);
+  color: var(--font-color);
   overflow-x: hidden;
 }
 p {
@@ -20,10 +27,10 @@ li {
 }
 a {
   text-decoration: none;
-  color: #cb5834;
+  color: var(--active-navlink-color);
 }
 a:visited {
-  color: #d69469;
+  color: var(--visited-color);
 }
 .App {
   display: flex;
@@ -58,7 +65,7 @@ a:visited {
 }
 
 .navbar h3 {
-  border-bottom: 3px solid #cb5834;
+  border-bottom: 3px solid var(--active-navlink-color);
   display: block;
   padding-left: 2rem;
   max-width: 40%;
@@ -75,11 +82,11 @@ nav {
   align-self: center;
   padding: 1rem;
   border-radius: 4px;
-  color: #2e2420;
+  color: var(--font-color);
   font-size: clamp(1.2rem, 1.6rem, 2rem);
 }
 .navbar a:hover {
-  color: #cb5834;
+  color: var(--active-navlink-color);
 }
 .navbar a.active {
   background: #c0acac;
@@ -163,7 +170,7 @@ textarea {
   border-radius: 4px;
   border: 0;
   width: 300px;
-  color: #cb5834;
+  color: var(--active-navlink-color);
 }
 form label span {
   margin-bottom: 0.5rem;
@@ -176,12 +183,12 @@ button {
   padding: 8px;
   border-radius: 4px;
   color: white;
-  background: #cb5834;
+  background: var(--active-navlink-color);
   cursor: pointer;
 }
 
 button:hover {
-  background: #d69469;
+  background: var(--visited-color);
 }
 
 .add-game button {
@@ -197,7 +204,7 @@ button:hover {
   flex-direction: column;
 }
 .upload:hover {
-  color: #cb5834;
+  color: var(--active-navlink-color);
 }
 
 .offscreen {
@@ -254,7 +261,7 @@ button:hover {
   max-width: 90%;
   background-color: white;
   box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
-  border: 1px solid #cb5834;
+  border: 1px solid var(--active-navlink-color);
 }
 
 .favorites {
@@ -277,11 +284,11 @@ table {
   background-color: white;
   padding: 2rem;
   max-width: 90%;
-  border: 1px solid #cb5834;
+  border: 1px solid var(--active-navlink-color);
 }
 .game-rules {
   max-width: 90%;
-  border: 1px solid #cb5834;
+  border: 1px solid var(--active-navlink-color);
   padding: 1rem;
 }
 
@@ -327,7 +334,7 @@ table {
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  background-color: #cb5834;
+  background-color: var(--active-navlink-color);
   height: 15vh;
   padding: 1rem 2rem;
 }
@@ -339,9 +346,6 @@ table {
     justify-content: space-around;
   }
 
-  /* .navbar a {
-    margin: auto 1rem;
-  } */
   nav {
     width: 100%;
     padding: 1rem 2rem;
