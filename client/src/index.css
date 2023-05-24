@@ -4,11 +4,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-color: seashell;
+  --active-navlink-color: #cb5834;
+  --font-color: #2e2420;
+  --visited-color: #d69469;
+}
+
 body {
   font-family: "Times New Roman", Times, serif;
   line-height: 1.5;
-  background-color: seashell;
-  color: #2e2420;
+  background-color: var(--bg-color);
+  color: var(--font-color);
   overflow-x: hidden;
 }
 p {
@@ -20,10 +27,10 @@ li {
 }
 a {
   text-decoration: none;
-  color: #cb5834;
+  color: var(--active-navlink-color);
 }
 a:visited {
-  color: #d69469;
+  color: var(--visited-color);
 }
 .App {
   display: flex;
@@ -31,14 +38,6 @@ a:visited {
   min-width: 100%;
   min-height: 100vh;
   position: relative;
-}
-
-.content {
-  padding: 1rem 2rem;
-  margin-top: 15vh;
-  margin-bottom: 16vh;
-  align-self: center;
-  overflow-wrap: break-word;
 }
 
 /* navbar */
@@ -50,7 +49,6 @@ a:visited {
   margin-top: 0;
   padding: 2rem 0;
   display: flex;
-  /* gap: 2rem; */
   justify-content: space-between;
   width: 100%;
   max-height: 15vh;
@@ -58,11 +56,10 @@ a:visited {
 }
 
 .navbar h3 {
-  border-bottom: 3px solid #cb5834;
+  border-bottom: 3px solid var(--active-navlink-color);
   display: block;
   padding-left: 2rem;
   max-width: 40%;
-  /* font-size: clamp(1.2rem, 1.6rem, 2rem); */
 }
 
 nav {
@@ -76,25 +73,24 @@ nav {
   align-self: center;
   padding: 1rem;
   border-radius: 4px;
-  color: #2e2420;
+  color: var(--font-color);
   font-size: clamp(1.2rem, 1.6rem, 2rem);
 }
 .navbar a:hover {
-  color: #cb5834;
+  color: var(--active-navlink-color);
 }
 .navbar a.active {
   background: #c0acac;
   color: #f5f6f3;
 }
 
-/*components*/
-.help-app a {
-  padding: 10px;
-  border-radius: 4px;
-}
-
-.help-app nav {
-  margin: 3rem 2rem;
+/*main*/
+.content {
+  padding: 1rem 2rem;
+  margin-top: 15vh;
+  margin-bottom: 16vh;
+  align-self: center;
+  overflow-wrap: break-word;
 }
 
 /* home page */
@@ -133,8 +129,8 @@ nav {
   max-width: 100%;
   margin: auto -4rem;
   background-image: linear-gradient(
-      rgba(245, 78, 245, 0.8),
-      rgba(247, 215, 127, 0.8)
+      rgba(245, 161, 245, 0.8),
+      rgba(249, 235, 197, 0.8)
     ),
     url("./components/assets/alphabet.jpeg");
   border: 2px solid black;
@@ -147,7 +143,7 @@ nav {
   font-size: clamp(1rem, 1.4rem, 1.8rem);
 }
 
-/*  search-form */
+/*  search-form, add-form */
 form {
   margin-top: 1rem;
 }
@@ -164,24 +160,25 @@ textarea {
   border-radius: 4px;
   border: 0;
   width: 300px;
-  color: #cb5834;
+  color: var(--active-navlink-color);
 }
 form label span {
   margin-bottom: 0.5rem;
 }
 
 button {
+  margin: 0.5rem 0;
   width: 300px;
   border: 0;
   padding: 8px;
   border-radius: 4px;
   color: white;
-  background: #cb5834;
+  background: var(--active-navlink-color);
   cursor: pointer;
 }
 
 button:hover {
-  background: #d69469;
+  background: var(--visited-color);
 }
 
 .add-game button {
@@ -197,9 +194,10 @@ button:hover {
   flex-direction: column;
 }
 .upload:hover {
-  color: #cb5834;
+  color: var(--active-navlink-color);
 }
 
+/*login*/
 .offscreen {
   position: absolute;
   left: -9999px;
@@ -241,7 +239,7 @@ button:hover {
   margin-bottom: 0.5rem;
   margin-top: 1rem;
 }
-
+/*games render*/
 .rules {
   max-width: 80%;
   display: flex;
@@ -249,26 +247,15 @@ button:hover {
   gap: 1rem;
   margin: auto;
 }
-
 .image-container {
   max-width: 90%;
   background-color: white;
   box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
-  border: 1px solid #cb5834;
+  border: 1px solid var(--active-navlink-color);
 }
-
-.favorites {
-  display: flex;
-  justify-content: space-around;
-}
-.favoritesContainer {
-  max-width: 50%;
-}
-
 img {
   width: 100%;
 }
-
 .game-name {
   text-align: center;
   padding: 0.5rem 1rem;
@@ -277,14 +264,13 @@ table {
   background-color: white;
   padding: 2rem;
   max-width: 90%;
-  border: 1px solid #cb5834;
+  border: 1px solid var(--active-navlink-color);
 }
 .game-rules {
   max-width: 90%;
-  border: 1px solid #cb5834;
+  border: 1px solid var(--active-navlink-color);
   padding: 1rem;
 }
-
 .game {
   font-size: clamp(1.5rem, 2vw, 2.5rem);
   max-width: 90%;
@@ -295,12 +281,10 @@ table {
   display: flex;
   flex-direction: column;
 }
-
 .games-cards h2 {
   align-self: center;
   padding-bottom: 1rem;
 }
-
 .game-list {
   max-width: 100%;
   display: flex;
@@ -312,6 +296,16 @@ table {
   max-width: 15rem;
 }
 
+/*favorites*/
+.favorites {
+  display: flex;
+  justify-content: space-around;
+}
+.favoritesContainer {
+  max-width: 50%;
+}
+
+/*register*/
 .register-section {
   display: flex;
   max-width: 80%;
@@ -319,6 +313,7 @@ table {
   align-items: center;
   flex-direction: column;
 }
+/*footer*/
 .container-footer {
   position: fixed;
   bottom: 0;
@@ -327,9 +322,17 @@ table {
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  background-color: #cb5834;
+  background-color: var(--active-navlink-color);
   height: 15vh;
   padding: 1rem 2rem;
+}
+/*components*/
+.help-app a {
+  padding: 10px;
+  border-radius: 4px;
+}
+.help-app nav {
+  margin: 3rem 2rem;
 }
 
 @media screen and (max-width: 900px) {
@@ -339,9 +342,6 @@ table {
     justify-content: space-around;
   }
 
-  /* .navbar a {
-    margin: auto 1rem;
-  } */
   nav {
     width: 100%;
     padding: 1rem 2rem;
