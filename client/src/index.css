@@ -40,14 +40,6 @@ a:visited {
   position: relative;
 }
 
-.content {
-  padding: 1rem 2rem;
-  margin-top: 15vh;
-  margin-bottom: 16vh;
-  align-self: center;
-  overflow-wrap: break-word;
-}
-
 /* navbar */
 
 .navbar {
@@ -57,7 +49,6 @@ a:visited {
   margin-top: 0;
   padding: 2rem 0;
   display: flex;
-  /* gap: 2rem; */
   justify-content: space-between;
   width: 100%;
   max-height: 15vh;
@@ -93,14 +84,13 @@ nav {
   color: #f5f6f3;
 }
 
-/*components*/
-.help-app a {
-  padding: 10px;
-  border-radius: 4px;
-}
-
-.help-app nav {
-  margin: 3rem 2rem;
+/*main*/
+.content {
+  padding: 1rem 2rem;
+  margin-top: 15vh;
+  margin-bottom: 16vh;
+  align-self: center;
+  overflow-wrap: break-word;
 }
 
 /* home page */
@@ -153,7 +143,7 @@ nav {
   font-size: clamp(1rem, 1.4rem, 1.8rem);
 }
 
-/*  search-form */
+/*  search-form, add-form */
 form {
   margin-top: 1rem;
 }
@@ -207,6 +197,7 @@ button:hover {
   color: var(--active-navlink-color);
 }
 
+/*login*/
 .offscreen {
   position: absolute;
   left: -9999px;
@@ -248,7 +239,7 @@ button:hover {
   margin-bottom: 0.5rem;
   margin-top: 1rem;
 }
-
+/*games render*/
 .rules {
   max-width: 80%;
   display: flex;
@@ -256,26 +247,15 @@ button:hover {
   gap: 1rem;
   margin: auto;
 }
-
 .image-container {
   max-width: 90%;
   background-color: white;
   box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
   border: 1px solid var(--active-navlink-color);
 }
-
-.favorites {
-  display: flex;
-  justify-content: space-around;
-}
-.favoritesContainer {
-  max-width: 50%;
-}
-
 img {
   width: 100%;
 }
-
 .game-name {
   text-align: center;
   padding: 0.5rem 1rem;
@@ -291,7 +271,6 @@ table {
   border: 1px solid var(--active-navlink-color);
   padding: 1rem;
 }
-
 .game {
   font-size: clamp(1.5rem, 2vw, 2.5rem);
   max-width: 90%;
@@ -302,12 +281,10 @@ table {
   display: flex;
   flex-direction: column;
 }
-
 .games-cards h2 {
   align-self: center;
   padding-bottom: 1rem;
 }
-
 .game-list {
   max-width: 100%;
   display: flex;
@@ -319,6 +296,16 @@ table {
   max-width: 15rem;
 }
 
+/*favorites*/
+.favorites {
+  display: flex;
+  justify-content: space-around;
+}
+.favoritesContainer {
+  max-width: 50%;
+}
+
+/*register*/
 .register-section {
   display: flex;
   max-width: 80%;
@@ -326,6 +313,7 @@ table {
   align-items: center;
   flex-direction: column;
 }
+/*footer*/
 .container-footer {
   position: fixed;
   bottom: 0;
@@ -337,6 +325,14 @@ table {
   background-color: var(--active-navlink-color);
   height: 15vh;
   padding: 1rem 2rem;
+}
+/*components*/
+.help-app a {
+  padding: 10px;
+  border-radius: 4px;
+}
+.help-app nav {
+  margin: 3rem 2rem;
 }
 
 @media screen and (max-width: 900px) {
