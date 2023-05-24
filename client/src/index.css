@@ -62,7 +62,6 @@ a:visited {
   display: block;
   padding-left: 2rem;
   max-width: 40%;
-  /* font-size: clamp(1.2rem, 1.6rem, 2rem); */
 }
 
 nav {
@@ -133,8 +132,8 @@ nav {
   max-width: 100%;
   margin: auto -4rem;
   background-image: linear-gradient(
-      rgba(245, 78, 245, 0.8),
-      rgba(247, 215, 127, 0.8)
+      rgba(245, 161, 245, 0.8),
+      rgba(249, 235, 197, 0.8)
     ),
     url("./components/assets/alphabet.jpeg");
   border: 2px solid black;
@@ -171,6 +170,7 @@ form label span {
 }
 
 button {
+  margin: 0.5rem 0;
   width: 300px;
   border: 0;
   padding: 8px;
